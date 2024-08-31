@@ -5,9 +5,10 @@
 # while-Schleife
 eingabeJaNein = 1
 while eingabeJaNein == 1:
-    
-    wahl = input("Welche Währung soll umgerechnet werden? EUR, USD oder GBP: ")
-    if wahl == "EUR":
+# Auswahl der verfügbaren Währung   
+    wahl = input("Welche Währung steht dir zur verfügung? EUR, USD oder GBP: ")
+# Auswahl EUR
+    if wahl == "EUR" or "eur":
         import requests
 
 # URL einer API, die den aktuellen Kurs EUR zu USD liefert
@@ -48,13 +49,13 @@ while eingabeJaNein == 1:
             print(f"Der aktuelle Wechselkurs von EUR zu GPB beträgt: {kurs_eur_gbp}")
         else:
             print("Fehler beim Abrufen der Daten.")
-
+# Eingabe und Berechnung des Werts
     inputEUR = float(input("Gib den Wert in Euro an: "))
     outputUSD = inputEUR * kurs_eur_usd
     print(inputEUR,"Euro sind",outputUSD,"USD")
     outputGBP = inputEUR * kurs_eur_gbp
     print(inputEUR,"Euro sind",outputGBP,"Pfund")
-
+            
 # Sprung zum Anfang (while-Schleife)
     neueEingabe = input("Willst du eine neue Umrechnung machen? Ja oder Nein? ")
     if neueEingabe == "Ja":
